@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
-import { Geist } from 'next/font/google'; // Geist Sans is typically imported as Geist
-import { Geist_Mono } from 'next/font/google';
+import { Inter as FontSans } from 'next/font/google'; // Using Inter as a common sans-serif font
+import { Geist_Mono } from 'next/font/google'; // Keep Geist Mono if specifically needed
 import './globals.css';
-import AppLayout from '@/components/layout/AppLayout';
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/theme-provider"; // Assuming this path or similar for ThemeProvider
 
-const geistSans = Geist({ // Corrected import for Geist Sans
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'SUI AMM Visualizer',
-  description: 'Visualize Automated Market Maker data on the SUI blockchain.',
+  description: 'Swap, Pool, Earn — All in One. Visualize Automated Market Maker data on the SUI blockchain.',
 };
 
 export default function RootLayout({
@@ -26,10 +26,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <AppLayout>{children}</AppLayout>
-        <Toaster />
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${fontSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark" // Set dark theme as default
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

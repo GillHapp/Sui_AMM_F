@@ -5,4 +5,5 @@ export interface Token {
   icon?: React.ElementType; // Component type for icon
   address: string; // Mock address
   color?: string; // For simple colored circle icons
+  decimals?: number; // Number of decimal places for the token
 }
