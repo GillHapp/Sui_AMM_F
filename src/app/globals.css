@@ -4,79 +4,85 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* White */
-    --foreground: 232 62% 29%; /* Deep Blue for text on light bg */
+    --background: 0 0% 100%; /* Default White for cards/popovers on light theme */
+    --foreground: 240 29% 18%; /* #22223B - Dark Purple for text */
 
-    --card: 0 0% 100%; /* White */
-    --card-foreground: 232 62% 29%; /* Deep Blue for text */
+    --card: 0 0% 100%; /* White for cards */
+    --card-foreground: 240 29% 18%; /* #22223B */
 
-    --popover: 0 0% 100%; /* White */
-    --popover-foreground: 232 62% 29%; /* Deep Blue for text */
+    --popover: 0 0% 100%; /* White for popovers */
+    --popover-foreground: 240 29% 18%; /* #22223B */
 
-    --primary: 232 62% 29%; /* Deep Blue */
-    --primary-foreground: 0 0% 98%; /* White text on Deep Blue */
+    --primary: 231 17% 35%; /* #4A4E69 - Dark Grayish Blue */
+    --primary-foreground: 23 33% 92%; /* #F2E9E4 - Light Pink/Off-White */
 
-    --secondary: 173 60% 38%; /* Light Teal */
-    --secondary-foreground: 0 0% 98%; /* White text on Light Teal */
+    --secondary: 285 8% 57%; /* #9A8C98 - Grayish Purple */
+    --secondary-foreground: 23 33% 92%; /* #F2E9E4 */
 
-    --muted: 240 4.8% 95.9%; /* Light Grey */
-    --muted-foreground: 240 3.8% 46.1%; /* Darker Grey */
+    --muted: 16 26% 85%; /* Lighter #C9ADA7 - Light Brownish Pink */
+    --muted-foreground: 231 17% 45%; /* #4A4E69 slightly lighter for text on muted */
 
-    --accent: 262 36% 55%; /* Electric Purple */
-    --accent-foreground: 0 0% 98%; /* White text on Electric Purple */
+    --accent: 16 26% 72%; /* #C9ADA7 - Light Brownish Pink */
+    --accent-foreground: 240 29% 18%; /* #22223B */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 232 62% 85%; /* Lighter Deep Blue variant for borders */
-    --input: 232 62% 85%; /* Lighter Deep Blue variant for input */
-    --ring: 262 36% 55%; /* Electric Purple for rings */
+    --border: 16 26% 80%; /* Lighter #C9ADA7 */
+    --input: 16 26% 88%; /* Even Lighter #C9ADA7 for input background */
+    --ring: 231 17% 35%; /* #4A4E69 - Primary color for rings */
 
     --radius: 0.5rem;
 
+    /* Page background for light theme */
+    --page-background: 23 33% 92%; /* #F2E9E4 */
+
     /* Chart colors - ensure these provide good contrast on light background */
-    --chart-1: hsl(var(--secondary)); /* Light Teal */
-    --chart-2: hsl(var(--accent)); /* Electric Purple */
-    --chart-3: hsl(var(--primary)); /* Deep Blue - ensure good contrast or use a lighter shade */
-    --chart-4: 25 80% 50%; 
-    --chart-5: 300 70% 50%;
+    --chart-1: hsl(var(--primary)); /* #4A4E69 */
+    --chart-2: hsl(var(--accent)); /* #C9ADA7 */
+    --chart-3: hsl(var(--secondary)); /* #9A8C98 */
+    --chart-4: 240 29% 18%; /* #22223B */
+    --chart-5: 285 8% 70%; /* Lighter #9A8C98 */
   }
 
   .dark {
-    --background: 232 62% 29%; /* Deep Blue */
-    --foreground: 220 20% 95%; /* Light grey for text */
+    --background: 240 29% 18%; /* #22223B - Dark Purple for page and default component bg */
+    --foreground: 23 33% 92%; /* #F2E9E4 - Light Pink/Off-White for text */
 
-    --card: 232 60% 33%; /* Lighter Deep Blue for cards */
-    --card-foreground: 220 20% 95%;
+    --card: 231 17% 35%; /* #4A4E69 - Dark Grayish Blue for cards */
+    --card-foreground: 23 33% 92%; /* #F2E9E4 */
 
-    --popover: 232 60% 25%; /* Darker Deep Blue variant for popovers */
-    --popover-foreground: 220 20% 95%;
+    --popover: 231 17% 30%; /* Darker #4A4E69 for popovers */
+    --popover-foreground: 23 33% 92%; /* #F2E9E4 */
 
-    --primary: 232 62% 29%; /* Deep Blue */
-    --primary-foreground: 220 20% 98%; 
+    --primary: 16 26% 72%; /* #C9ADA7 - Light Brownish Pink for buttons */
+    --primary-foreground: 240 29% 18%; /* #22223B */
 
-    --secondary: 173 60% 38%; /* Light Teal */
-    --secondary-foreground: 173 100% 98%; 
+    --secondary: 285 8% 57%; /* #9A8C98 - Grayish Purple */
+    --secondary-foreground: 240 29% 18%; /* #22223B */
 
-    --muted: 232 50% 35%; /* Muted variant based on Deep Blue */
-    --muted-foreground: 220 30% 75%; 
+    --muted: 231 17% 25%; /* Darker #4A4E69 for muted backgrounds */
+    --muted-foreground: 285 8% 70%; /* Lighter #9A8C98 for text on muted */
 
-    --accent: 262 36% 55%; /* Electric Purple */
-    --accent-foreground: 262 100% 98%;
+    --accent: 23 33% 92%; /* #F2E9E4 - Light Pink/Off-White for high-contrast accent */
+    --accent-foreground: 240 29% 18%; /* #22223B */
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 232 50% 45%; /* Border color derived from Deep Blue */
-    --input: 232 50% 40%; /* Input background */
-    --ring: 262 36% 55%; /* Ring color, Electric Purple */
+    --border: 231 17% 45%; /* Mid-tone #4A4E69 */
+    --input: 231 17% 45%; /* Mid-tone #4A4E69 for input background */
+    --ring: 16 26% 72%; /* #C9ADA7 */
     
+    /* Page background for dark theme (same as default background) */
+    --page-background: 240 29% 18%; /* #22223B */
+
     /* Chart colors for dark theme */
-    --chart-1: 173 50% 50%; /* Adjusted Light Teal for dark bg */
-    --chart-2: 262 45% 65%; /* Adjusted Electric Purple for dark bg */
-    --chart-3: 210 70% 75%; /* A light blue for contrast */
-    --chart-4: 30 90% 65%;  /* An orange for contrast */
-    --chart-5: 50 85% 60%;  /* A yellow for contrast */
+    --chart-1: hsl(var(--primary)); /* #C9ADA7 */
+    --chart-2: hsl(var(--secondary)); /* #9A8C98 */
+    --chart-3: 23 33% 92%;  /* #F2E9E4 */
+    --chart-4: 285 8% 70%;  /* Lighter #9A8C98 */
+    --chart-5: 16 26% 60%;  /* Darker #C9ADA7 */
   }
 }
 
@@ -85,7 +91,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[hsl(var(--page-background))] text-foreground; /* Use --page-background for body */
     font-feature-settings: "rlig" 1, "calt" 1; /* Enable common ligatures and contextual alternates */
   }
 }
