@@ -12,7 +12,7 @@ import { cn } from '@/lib/utils';
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
   const pathname = usePathname();
   const isActive = pathname === href || (href === '/app' && pathname.startsWith('/app/swap')); // Treat /app as /app/swap for active state
-  
+
   // Special handling for /app default route to highlight Swap
   const actualHref = href === '/app' ? '/app/swap' : href;
 
@@ -70,8 +70,8 @@ const ConnectWalletButton = () => {
   const disconnectWallet = () => setIsConnected(false);
 
   return (
-    <Button 
-      onClick={isConnected ? disconnectWallet : connectWallet} 
+    <Button
+      onClick={isConnected ? disconnectWallet : connectWallet}
       className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-md hover:shadow-lg transition-all duration-300 ease-out"
     >
       {isConnected ? 'Disconnect Wallet' : 'Connect Wallet'}
@@ -92,7 +92,7 @@ export default function Header() {
   const navItems = [
     { href: '/app/swap', label: 'Swap' },
     { href: '/app/pool', label: 'Pool' },
-    { href: '/app/dashboard', label: 'Dashboard' },
+    // { href: '/app/dashboard', label: 'Dashboard' },
   ];
 
   return (
@@ -135,7 +135,7 @@ export default function Header() {
         <div className="md:hidden absolute top-16 left-0 right-0 bg-background shadow-lg border-t border-border/40 p-4 space-y-2">
           <nav className="flex flex-col space-y-2">
             {navItems.map((item) => (
-               <Link href={item.href} key={item.href} passHref>
+              <Link href={item.href} key={item.href} passHref>
                 <Button
                   variant="ghost"
                   className={cn(
